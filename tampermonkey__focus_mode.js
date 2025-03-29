@@ -22,7 +22,7 @@
     // ✔ Fix simulateActivity() để không bị phát hiện do thời gian lặp đều đặn
     // ✔ Fix document.visibilityState & hidden với configurable: true để tăng tính tương thích
 
-    const DEBUG_MODE = false;  // Đặt thành true nếu muốn debug
+    const DEBUG_MODE = true;  // Đặt thành true nếu muốn debug
 
     // Function to generate a timestamp in Python logging format
     function getFormattedTimestamp() {
@@ -49,6 +49,12 @@
         configurable: true
     });
 
+    Object.defineProperty(window, "onblur", {
+        set: () => {},
+        get: () => null
+    });
+
+
     // Chặn sự kiện visibilitychange & blur
     document.addEventListener('visibilitychange', function(event) {
         logInfo("✅ Protected visibilityState event!");
@@ -61,10 +67,15 @@
     }, true);
 
     // Giữ focus bằng requestAnimationFrame
-    const realRAF = window.requestAnimationFrame;
+    let lastTime = performance.now();
     window.requestAnimationFrame = function(callback) {
         return realRAF(() => {
             document.hasFocus = () => true;
+            const now = performance.now();
+            if (now - lastTime > 100) {
+                console.log("⚠️ Web có thể phát hiện bạn rời app!");
+            }
+            lastTime = now;
             callback();
         });
     };
