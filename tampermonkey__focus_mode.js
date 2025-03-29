@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MAIN Chrome Active
 // @namespace    https://courses.ut.edu.vn/
-// @version      2.1
+// @version      2.2
 // @description  Prevent visibility detection and simulate activity
 // @author       You
 // @match        https://courses.ut.edu.vn/*
@@ -22,7 +22,7 @@
     // ✔ Fix simulateActivity() để không bị phát hiện do thời gian lặp đều đặn
     // ✔ Fix document.visibilityState & hidden với configurable: true để tăng tính tương thích
 
-    const DEBUG_MODE = false;  // Đặt thành true nếu muốn debug
+    const DEBUG_MODE = true; // Đặt thành true nếu muốn debug
 
     // Function to generate a timestamp in Python logging format
     function getFormattedTimestamp() {
@@ -39,19 +39,36 @@
     }
 
     // Override visibilityState and hidden with logging
+    // Theo dõi truy cập vào document.visibilityState
     Object.defineProperty(document, "visibilityState", {
-        get: () => "visible",
+        get: function() {
+            logInfo("document.visibilityState được truy cập!");
+            return "visible";
+        },
         configurable: true
     });
 
+    // Theo dõi truy cập vào document.hidden
     Object.defineProperty(document, "hidden", {
-        get: () => false,
+        get: function() {
+            logInfo("document.hidden được truy cập!");
+            return false;
+        },
+        configurable: true
+    });
+
+    // Ghi đè document.hasFocus() một cách đúng đắn
+    Object.defineProperty(document, "hasFocus", {
+        get: function() {
+            logInfo("document.hasFocus() được gọi!");
+            return () => true; // Trả về một function thay vì gán trực tiếp
+        },
         configurable: true
     });
 
     // Chặn sự kiện visibilitychange & blur
     document.addEventListener('visibilitychange', function(event) {
-        logInfo("✅ Protected visibilityState event!");
+        logInfo(`✅ Protected visibilityState event! status: ${document.visibilityState}`);
         event.stopImmediatePropagation();
     }, true);
 
