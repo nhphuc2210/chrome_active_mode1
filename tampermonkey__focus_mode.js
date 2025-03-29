@@ -9,18 +9,11 @@
 // @grant        none
 // @updateURL    https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/master/tampermonkey__focus_mode.js
 // @downloadURL  https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/master/tampermonkey__focus_mode.js
-// @run-at       document-start
+// @run-at       document-end
 // ==/UserScript==
 
 (function() {
     'use strict';
-
-    //     ✅ Fix & Cải Tiến
-    // ✔ Fix document.hasFocus để luôn trả về true
-    // ✔ Fix getDisplayMedia để không bị lỗi trên trình duyệt không hỗ trợ WebRTC
-    // ✔ Fix getFormattedTimestamp() để đảm bảo gọi trước khi sử dụng
-    // ✔ Fix simulateActivity() để không bị phát hiện do thời gian lặp đều đặn
-    // ✔ Fix document.visibilityState & hidden với configurable: true để tăng tính tương thích
 
     const DEBUG_MODE = false; // Đặt thành true nếu muốn debug
 

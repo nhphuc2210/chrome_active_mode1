@@ -8,7 +8,7 @@
 // @grant        none
 // @updateURL    https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/master/tampermonkey__keep_alive.js
 // @downloadURL  https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/master/tampermonkey__keep_alive.js
-// @run-at       document-start
+// @run-at       document-end
 // ==/UserScript==
 
 (function() {
