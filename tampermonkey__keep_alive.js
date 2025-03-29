@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Auto Click "Kéo dài phiên làm việc"
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.1
 // @description  Tự động nhấn "Kéo dài phiên làm việc" khi xuất hiện popup session timeout
 // @author       Bạn
 // @match        https://courses.ut.edu.vn/*
@@ -14,7 +14,7 @@
 (function() {
     'use strict';
     const second = 30;
-    const DEBUG_MODE = true; // Đặt thành true nếu muốn debug
+    const DEBUG_MODE = false; // Đặt thành true nếu muốn debug
 
     // Function to generate a timestamp in Python logging format
     function getFormattedTimestamp() {

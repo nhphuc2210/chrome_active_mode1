@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Kiểm tra thời gian của session
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Tự động kiểm tra và giữ phiên Moodle hoạt động
 // @author       Bạn
 // @match        https://courses.ut.edu.vn/*
@@ -14,7 +14,7 @@
 (function() {
     'use strict';
 
-    const DEBUG_MODE = false;  // Đặt thành true nếu muốn debug
+    const DEBUG_MODE = true;  // Đặt thành true nếu muốn debug
 
     // Function to generate a timestamp in Python logging format
     function getFormattedTimestamp() {
