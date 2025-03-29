@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         tampermonkey__focus_mode
+// @name         MAIN Chrome Active
 // @namespace    https://courses.ut.edu.vn/
 // @version      1.0
 // @description  Prevent visibility detection and simulate activity
@@ -7,7 +7,9 @@
 // @match        https://courses.ut.edu.vn/*
 // @match        https://www.tiktok.com/*
 // @grant        none
-// @run-at       document-end
+// @updateURL    https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/refs/heads/master/tampermonkey__focus_mode.js
+// @downloadURL  https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/refs/heads/master/tampermonkey__focus_mode.js
+// @run-at       document-start
 // ==/UserScript==
 
 (function() {

@@ -1,18 +1,20 @@
 // ==UserScript==
-// @name         auto click "Kéo dài phiên làm việc"
+// @name         Auto Click "Kéo dài phiên làm việc"
 // @namespace    http://tampermonkey.net/
 // @version      1.1
 // @description  Tự động nhấn "Kéo dài phiên làm việc" khi xuất hiện popup session timeout
 // @author       Bạn
 // @match        https://courses.ut.edu.vn/*
 // @grant        none
+// @updateURL    https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/refs/heads/master/tampermonkey__focus_mode.js
+// @downloadURL  https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/refs/heads/master/tampermonkey__focus_mode.js
 // @run-at       document-start
 // ==/UserScript==
 
 (function() {
     'use strict';
     const second = 30;
-    const DEBUG_MODE = false;  // Đặt thành true nếu muốn debug
+    const DEBUG_MODE = false; // Đặt thành true nếu muốn debug
 
     // Function to generate a timestamp in Python logging format
     function getFormattedTimestamp() {

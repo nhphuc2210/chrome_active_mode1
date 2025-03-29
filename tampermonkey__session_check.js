@@ -1,11 +1,13 @@
 // ==UserScript==
-// @name         tampermonkey__session_check
+// @name         Kiểm tra thời gian của session
 // @namespace    http://tampermonkey.net/
 // @version      1.1
 // @description  Tự động kiểm tra và giữ phiên Moodle hoạt động
 // @author       Bạn
 // @match        https://courses.ut.edu.vn/*
 // @grant        none
+// @updateURL    https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/refs/heads/master/tampermonkey__focus_mode.js
+// @downloadURL  https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/refs/heads/master/tampermonkey__focus_mode.js
 // @run-at       document-end
 // ==/UserScript==
 
