@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Chặn phát hiện dùng chrome dev mode
 // @namespace    http://tampermonkey.net/
-// @version      2.1
+// @version      2.6
 // @description  Ngăn chặn trang web phát hiện DevTools
 // @match        https://courses.ut.edu.vn/*
 // @grant        none
