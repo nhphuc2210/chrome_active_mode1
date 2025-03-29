@@ -5,8 +5,8 @@
 // @description  Ngăn chặn trang web phát hiện DevTools
 // @match        https://courses.ut.edu.vn/*
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/refs/heads/master/tampermonkey__focus_mode.js
-// @downloadURL  https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/refs/heads/master/tampermonkey__focus_mode.js
+// @updateURL    https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/refs/heads/master/tampermonkey__block_dev_mode.js
+// @downloadURL  https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/refs/heads/master/tampermonkey__block_dev_mode.js
 // @run-at       document-start
 // ==/UserScript==
 

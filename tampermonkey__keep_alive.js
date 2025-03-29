@@ -6,8 +6,8 @@
 // @author       Bạn
 // @match        https://courses.ut.edu.vn/*
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/refs/heads/master/tampermonkey__focus_mode.js
-// @downloadURL  https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/refs/heads/master/tampermonkey__focus_mode.js
+// @updateURL    https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/refs/heads/master/tampermonkey__keep_alive.js
+// @downloadURL  https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/refs/heads/master/tampermonkey__keep_alive.js
 // @run-at       document-start
 // ==/UserScript==
 
