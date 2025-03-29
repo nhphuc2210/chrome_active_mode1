@@ -49,12 +49,6 @@
         configurable: true
     });
 
-    Object.defineProperty(window, "onblur", {
-        set: () => {},
-        get: () => null
-    });
-
-
     // Chặn sự kiện visibilitychange & blur
     document.addEventListener('visibilitychange', function(event) {
         logInfo("✅ Protected visibilityState event!");
@@ -66,10 +60,14 @@
         event.stopImmediatePropagation();
     }, true);
 
-    // Giữ focus bằng requestAnimationFrame
+    // Khai báo biến lastTime bên ngoài để đảm bảo nó có sẵn cho toàn bộ scope
     let lastTime = performance.now();
+
+    const realRAF = window.requestAnimationFrame;
+
     window.requestAnimationFrame = function(callback) {
         return realRAF(() => {
+            // Đảm bảo luôn trả về true cho document.hasFocus
             document.hasFocus = () => true;
             const now = performance.now();
             if (now - lastTime > 100) {
