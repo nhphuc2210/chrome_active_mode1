@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         Chặn phát hiện dùng chrome dev mode
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      2.0
 // @description  Ngăn chặn trang web phát hiện DevTools
 // @match        https://courses.ut.edu.vn/*
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/refs/heads/master/tampermonkey__block_dev_mode.js
-// @downloadURL  https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/refs/heads/master/tampermonkey__block_dev_mode.js
+// @updateURL    https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/master/tampermonkey__block_dev_mode.js
+// @downloadURL  https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/master/tampermonkey__block_dev_mode.js
 // @run-at       document-start
 // ==/UserScript==
 
