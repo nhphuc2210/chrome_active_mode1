@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MAIN Chrome Active
 // @namespace    https://courses.ut.edu.vn/
-// @version      2.4
+// @version      2.5
 // @description  Prevent visibility detection and simulate activity
 // @author       You
 // @match        https://courses.ut.edu.vn/*
@@ -35,9 +35,11 @@
     function logInfo(message) {
         if (DEBUG_MODE) {
             console.log(`${getFormattedTimestamp()} - [🟢 Protect Mode ON] - INFO: ${message}`);
-        } else {
-            console.log(`${getFormattedTimestamp()} - [🟢 Protect Mode ON] - INFO: DEBUG MODE: FALSE`);
         }
+    }
+
+    if (!DEBUG_MODE) {
+        console.log(`${getFormattedTimestamp()} - [🟢 Protect Mode ON] - INFO: DEBUG MODE = FALSE`);
     }
 
     // Override visibilityState and hidden with logging
@@ -69,24 +71,6 @@
         logInfo("✅ Protected blur event!");
         event.stopImmediatePropagation();
     }, true);
-
-    // Khai báo biến lastTime bên ngoài để đảm bảo nó có sẵn cho toàn bộ scope
-    let lastTime = performance.now();
-
-    const realRAF = window.requestAnimationFrame;
-
-    window.requestAnimationFrame = function(callback) {
-        return realRAF(() => {
-            // Đảm bảo luôn trả về true cho document.hasFocus
-            document.hasFocus = () => true;
-            const now = performance.now();
-            if (now - lastTime > 100) {
-                console.log("⚠️ Web có thể phát hiện bạn rời đi!");
-            }
-            lastTime = now;
-            callback();
-        });
-    };
 
     // Chặn addEventListener để tránh bị phát hiện
     const realAddEventListener = EventTarget.prototype.addEventListener;
