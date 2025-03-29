@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MAIN Chrome Active
 // @namespace    https://courses.ut.edu.vn/
-// @version      2.3
+// @version      2.4
 // @description  Prevent visibility detection and simulate activity
 // @author       You
 // @match        https://courses.ut.edu.vn/*
@@ -35,6 +35,8 @@
     function logInfo(message) {
         if (DEBUG_MODE) {
             console.log(`${getFormattedTimestamp()} - [🟢 Protect Mode ON] - INFO: ${message}`);
+        } else {
+            console.log(`${getFormattedTimestamp()} - [🟢 Protect Mode ON] - INFO: DEBUG MODE: FALSE`);
         }
     }
 
@@ -79,7 +81,7 @@
             document.hasFocus = () => true;
             const now = performance.now();
             if (now - lastTime > 100) {
-                console.log("⚠️ Web có thể phát hiện bạn rời app!");
+                console.log("⚠️ Web có thể phát hiện bạn rời đi!");
             }
             lastTime = now;
             callback();
