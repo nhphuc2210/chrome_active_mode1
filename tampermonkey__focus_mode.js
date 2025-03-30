@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MAIN Chrome Active
 // @namespace    https://courses.ut.edu.vn/
-// @version      2.6
+// @version      2.7
 // @description  Prevent visibility detection and simulate activity
 // @author       You
 // @match        https://courses.ut.edu.vn/*
@@ -15,7 +15,7 @@
 (function() {
     'use strict';
 
-    const DEBUG_MODE = false; // Đặt thành true nếu muốn debug
+    const DEBUG_MODE = true; // Đặt thành true nếu muốn debug
 
     // Function to generate a timestamp in Python logging format
     function getFormattedTimestamp() {
@@ -65,6 +65,10 @@
         event.stopImmediatePropagation();
     }, true);
 
+    window.addEventListener('focus', function(event) {
+        logInfo("🔵 Người dùng đã quay lại cửa sổ.");
+    });
+
     // Chặn addEventListener để tránh bị phát hiện
     const realAddEventListener = EventTarget.prototype.addEventListener;
     EventTarget.prototype.addEventListener = function(type, listener, options) {
@@ -86,21 +90,42 @@
 
     // Simulate mouse movement & key press at random intervals
     function simulateActivity() {
+        const mouseX = Math.random() * window.innerWidth;
+        const mouseY = Math.random() * window.innerHeight;
+
         const mouseEvent = new MouseEvent("mousemove", {
             bubbles: true, cancelable: true, view: window,
-            clientX: Math.random() * window.innerWidth,
-            clientY: Math.random() * window.innerHeight
+            clientX: mouseX, clientY: mouseY
         });
         document.documentElement.dispatchEvent(mouseEvent);
+        logInfo(`🖱️ Simulated mousemove at (${mouseX.toFixed(2)}, ${mouseY.toFixed(2)})`);
 
-        const keyEvent = new KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true });
+        const keyEvent = new KeyboardEvent("keydown", { key: "Shift", bubbles: true });
         document.documentElement.dispatchEvent(keyEvent);
+        logInfo("⌨️ Simulated keydown: Shift");
 
         setTimeout(simulateActivity, getRandomTime());
     }
 
     // Start the loop with a random interval
     simulateActivity();
+
+    // Theo dõi hoạt động chuột & bàn phím để kiểm tra người dùng thực sự đang focus
+    let lastActivity = Date.now();
+    function updateActivity() {
+        lastActivity = Date.now();
+    }
+
+    document.addEventListener("mousemove", updateActivity);
+    document.addEventListener("keydown", updateActivity);
+
+    setInterval(() => {
+        let now = Date.now();
+        if (now - lastActivity > 30000) { // Không hoạt động trong 30 giây
+            logInfo("⚠️ Không có hoạt động nào trong 30 giây! Có thể người dùng đã rời đi.");
+        }
+    }, 5000);
+
     logInfo("Simulating mouse movement & key pressed...");
     logInfo("Anti-visibility script is running with random intervals!");
     // alert("✅ Focus Mode is active. You are protected!");
