@@ -1,14 +1,14 @@
 // ==UserScript==
-// @name         MAIN Chrome Active // v2.8
+// @name         MAIN Chrome Active // v2.9
 // @namespace    https://courses.ut.edu.vn/
-// @version      2.8
+// @version      2.9
 // @description  Prevent visibility detection and simulate activity
 // @author       You
 // @match        https://courses.ut.edu.vn/*
 // @match        https://www.tiktok.com/*
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/master/tampermonkey__focus_mode.js
-// @downloadURL  https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/master/tampermonkey__focus_mode.js
+// @updateURL    https://github.com/nhphuc2210/chrome_active_mode1/raw/master/tampermonkey__focus_mode.js
+// @downloadURL  https://github.com/nhphuc2210/chrome_active_mode1/raw/master/tampermonkey__focus_mode.js
 // @run-at       document-end
 // ==/UserScript==
 

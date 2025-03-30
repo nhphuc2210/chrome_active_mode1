@@ -1,13 +1,13 @@
 // ==UserScript==
-// @name         Auto Click "Kéo dài phiên làm việc" // v2.8
+// @name         Auto Click "Kéo dài phiên làm việc" // v2.9
 // @namespace    http://tampermonkey.net/
-// @version      2.8
+// @version      2.9
 // @description  Tự động nhấn "Kéo dài phiên làm việc" khi xuất hiện popup session timeout
 // @author       Bạn
 // @match        https://courses.ut.edu.vn/*
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/master/tampermonkey__keep_alive.js
-// @downloadURL  https://raw.githubusercontent.com/nhphuc2210/chrome_active_mode1/master/tampermonkey__keep_alive.js
+// @updateURL    https://github.com/nhphuc2210/chrome_active_mode1/raw/master/tampermonkey__keep_alive.js
+// @downloadURL  https://github.com/nhphuc2210/chrome_active_mode1/raw/master/tampermonkey__keep_alive.js
 // @run-at       document-end
 // ==/UserScript==
 
