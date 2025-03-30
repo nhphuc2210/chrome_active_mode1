@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Kiểm tra thời gian của session
+// @name         Kiểm tra thời gian của session // v2.8
 // @namespace    http://tampermonkey.net/
-// @version      2.6
+// @version      2.8
 // @description  Tự động kiểm tra và giữ phiên Moodle hoạt động
 // @author       Bạn
 // @match        https://courses.ut.edu.vn/*

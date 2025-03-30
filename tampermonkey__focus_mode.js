@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         MAIN Chrome Active
+// @name         MAIN Chrome Active // v2.8
 // @namespace    https://courses.ut.edu.vn/
-// @version      2.7
+// @version      2.8
 // @description  Prevent visibility detection and simulate activity
 // @author       You
 // @match        https://courses.ut.edu.vn/*
