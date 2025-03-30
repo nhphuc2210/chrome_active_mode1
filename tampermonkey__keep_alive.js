@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Auto Click "Kéo dài phiên làm việc" // v2.9
+// @name         Auto Click "Kéo dài phiên làm việc" // v2.10
 // @namespace    http://tampermonkey.net/
-// @version      2.9
+// @version      2.10
 // @description  Tự động nhấn "Kéo dài phiên làm việc" khi xuất hiện popup session timeout
 // @author       Bạn
 // @match        https://courses.ut.edu.vn/*
